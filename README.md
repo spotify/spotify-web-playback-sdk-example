@@ -42,6 +42,14 @@ npm run dev
 
 The React application will start on `http://localhost:3000`
 
+## Linking Spotify with the fireplace
+
+* [Open the React App](http://localhost:3000) and when prompted use the button in the center of the screen to log into your Spotify account.
+* [Open the Spotify web player](https://open.spotify.com/) in another tab 
+* In the bottom right hand corner select to connect to another device and select ``Web Playback SDK``
+
+What ever you now play in the Spotify web player will appear and play in the fireplace tab.
+
 ## Resources
 
 - Follow [@SpotifyPlatform](https://twitter.com/SpotifyPlatform) on Twitter for Spotify for Developers updates.

@@ -105,3 +105,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Intellij
+/.idea/*
+*.iml
+

@@ -32,7 +32,7 @@ function WebPlayback(props) {
             const player = new window.Spotify.Player({
                 name: 'Web Playback SDK',
                 getOAuthToken: cb => { cb(props.token); },
-                volume: 0.5
+                volume: 0.2
             });
 
             setPlayer(player);
@@ -65,12 +65,14 @@ function WebPlayback(props) {
         };
     }, []);
 
-    if (!is_active) { 
+    if (!is_active) {
         return (
             <>
                 <div className="container">
-                    <div className="main-wrapper">
-                        <b> Instance not active. Transfer your playback using your Spotify app </b>
+                    <div id="video-wrapper">
+                        <video controls loop autoPlay id="video-file" className="w_full" preload="auto">
+                            <source src="/videos/fireplace.mp4" type="video/mp4"/>
+                        </video>
                     </div>
                 </div>
             </>)
@@ -78,25 +80,17 @@ function WebPlayback(props) {
         return (
             <>
                 <div className="container">
-                    <div className="main-wrapper">
+                    <div id="video-wrapper">
+                        <video controls loop autoPlay id="video-file" className="w_full" preload="auto">
+                            <source src="/videos/fireplace.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
 
-                        <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
-
+                    <div className="player-wrapper">
+                        <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" onClick={() => player.togglePlay()}/>
                         <div className="now-playing__side">
                             <div className="now-playing__name">{current_track.name}</div>
                             <div className="now-playing__artist">{current_track.artists[0].name}</div>
-
-                            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
-                                &lt;&lt;
-                            </button>
-
-                            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
-                                { is_paused ? "PLAY" : "PAUSE" }
-                            </button>
-
-                            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
-                                &gt;&gt;
-                            </button>
                         </div>
                     </div>
                 </div>

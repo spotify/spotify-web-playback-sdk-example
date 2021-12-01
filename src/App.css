@@ -9,9 +9,9 @@ html, body {
 }
 
 body {
-  background-color: #333;
+  background-color: #000000;
   color: #eee;
-  font-family: Helvetica, Arial;
+  font-family: "Gill Sans";
   font-size: 3vmin;
 }
 
@@ -69,12 +69,40 @@ body {
   flex: 1;
 }
 
+.player-wrapper {
+  padding-top: 45px;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  width: 95%;
+  z-index: 1;
+}
+
+#video-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#video-wrapper >  #video-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  cursor:pointer;
+}
+
 .now-playing__name {
-  font-size: 1.5em;
+  font-size: 0.75em;
   margin-bottom: 0.2em;
 }
 
 .now-playing__artist {
+  font-size: 0.5em;
   margin-bottom: 1em;
 }
 
@@ -87,8 +115,8 @@ body {
   float: left;
   margin-right: 10px;
   text-align: right;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
 }
 
 .now-playing__side {
