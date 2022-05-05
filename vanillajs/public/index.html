@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="please-transfer">
+      <div class="container">
+        <b>
+          Instance not active. Transfer your playback using your Spotify app.
+        </b>
+      </div>
+    </div>
+    <div id="now-playing" hidden>
+      <div class="container">
+        <img id="np-cover" class="now-playing--cover" />
+        <div class="now-playing--side">
+          <div id="np-track" class="now-playing--track"></div>
+          <div id="np-artist"></div>
+          <div>
+            <button
+              id="previous-track"
+              type="button"
+              class="now-playing--button"
+            >
+              &lt;&lt;
+            </button>
+            <button
+              id="playpause"
+              type="button"
+              class="now-playing--button now-playing--playpause"
+            >
+              Play
+            </button>
+            <button id="next-track" type="button" class="now-playing--button">
+              &gt;&gt;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script async src="js/index.js" type="module"></script>
+  </body>
+</html>

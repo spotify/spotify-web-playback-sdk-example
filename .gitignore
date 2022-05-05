@@ -1,6 +1,7 @@
 # Custom
 .vscode/
 .DS_STORE
+env.js
 
 # Logs
 logs
