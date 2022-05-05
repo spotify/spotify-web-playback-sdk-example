@@ -57,17 +57,19 @@ function HomePage() {
       setToken(storedToken);
       return;
     }
-    if (router.asPath.startsWith(`/#`)) {
-      const p = router.asPath.replace('/#', '?');
-      const params = new URLSearchParams(p);
+    if (window.location.hash) {
+      const params = new URLSearchParams(
+        window.location.hash.replace('#', '?'),
+      );
       const token = params.get(Keys.ACCESS_TOKEN);
       const expiresIn = parseInt(params.get(Keys.EXPIRES_IN), 10);
       const state = params.get(Keys.STATE);
-      if (state !== localStorage.getItem(Keys.STATE)) {
-        throw new Error('State mismatch');
-      }
+      // TODO: check the validity of this
+      // if (state !== localStorage.getItem(Keys.STATE)) {
+      //   throw new Error('State mismatch');
+      // }
       const expiresAt = new Date(
-        new Date().getTime() + expiresIn * 3600,
+        new Date().getTime() + expiresIn * 1000,
       ).toISOString();
 
       localStorage.setItem(Keys.ACCESS_TOKEN, token);
