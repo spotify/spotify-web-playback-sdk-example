@@ -69,13 +69,13 @@ export class MusicBox {
   }
 
   setInfo(info) {
-    const cover = document.getElementById('np-cover');
-    cover.setAttribute('src', info.album.images[0].url);
-    cover.setAttribute('alt', `cover art for ${info.album.name}`);
-    const track = document.getElementById('np-track');
-    track.textContent = info.name;
-    const artist = document.getElementById('np-artist');
-    artist.textContent = info.artists[0].name;
+    document
+      .getElementById('np-cover')
+      .setAttribute('src', info.album.images[0].url)
+      .setAttribute('alt', `cover art for ${info.album.name}`);
+
+    document.getElementById('np-track').textContent = info.name;
+    document.getElementById('np-artist').textContent = info.artists[0].name;
   }
 
   toggleNowPlaying(currentState) {
