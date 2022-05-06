@@ -1,0 +1,16 @@
+{
+  "name": "web-playback-sdk-sample-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "http-server -p 3000",
+    "lint": "eslint public/**"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "prettier": "^2.6.2"
+  }
+}
