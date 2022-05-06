@@ -21,15 +21,18 @@ export class Auth {
     try {
       const state = this.generateRandomString(16);
       localStorage.setItem(Auth.STATE, state);
+
       const scope = 'streaming user-read-email user-read-private';
-      const url = Object.entries({
+
+      const params = new URLSearchParams({
+        response_type: 'token',
         client_id: SPOTIFY_CLIENT_ID,
         scope,
         redirect_uri: 'http://localhost:3000/',
         state,
-      }).reduce((result, [key, value]) => {
-        return `${result}&${key}=${encodeURIComponent(value)}`;
-      }, `https://accounts.spotify.com/authorize?response_type=token`);
+      });
+
+      const url = `https://accounts.spotify.com/authorize/?${params.toString()}`;
 
       window.location.assign(url);
     } catch (err) {
