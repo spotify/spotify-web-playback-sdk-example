@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Lottie from 'react-lottie';
+import animationData from './lotties/duck';
+//import useToggler from "./useToggler";
+
+//const [play, toggle] = useToggler(false)
 
 const track = {
     name: "",
@@ -12,9 +17,18 @@ const track = {
     ]
 }
 
+const defaultOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
 function WebPlayback(props) {
 
-    const [is_paused, setPaused] = useState(false);
+    const [is_paused, setPaused] = useState(false);  //useToggler(false)  
     const [is_active, setActive] = useState(false);
     const [player, setPlayer] = useState(undefined);
     const [current_track, setTrack] = useState(track);
@@ -77,6 +91,7 @@ function WebPlayback(props) {
     } else {
         return (
             <>
+          <div>
                 <div className="container">
                     <div className="main-wrapper">
 
@@ -99,8 +114,19 @@ function WebPlayback(props) {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> 
+
+                            <Lottie 
+	    options={defaultOptions}
+        height={400}
+        width={400}
+       isStopped={is_paused} 
+      />    
+            </div>
+       
             </>
+
+
         );
     }
 }

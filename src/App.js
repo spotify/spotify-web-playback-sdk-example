@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import WebPlayback from './WebPlayback'
 import Login from './Login'
 import './App.css';
+import Lottie from 'react-lottie';
+import animationData from './lotties/duck';
+import useToggler from './useToggler';
 
 function App() {
 
   const [token, setToken] = useState('');
+ 
+
+ //const duckState = {isStopped: false};
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
 
   useEffect(() => {
 
@@ -21,7 +36,18 @@ function App() {
 
   return (
     <>
+    <div>
         { (token === '') ? <Login/> : <WebPlayback token={token} /> }
+        
+        
+   {/*      <Lottie 
+	    options={defaultOptions}
+        height={400}
+        width={400}
+       isStopped={true} 
+      />  */}
+        
+    </div>  
     </>
   );
 }
