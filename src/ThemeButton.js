@@ -10,10 +10,11 @@ function ThemeButton(props) {
 
     return (
         <button 
-            onClick={toggleTheme} 
+            //onClick={toggleTheme} 
+            onClick = {props.handleClick}
             className={buttonStyle}
         >
-            Switch Theme
+            {props.text}
         </button>
     )    
 }

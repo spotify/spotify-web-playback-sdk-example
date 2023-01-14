@@ -7,11 +7,12 @@ import animationData from './lotties/duck';
 import {ThemeContext} from "./themeContext"
 import ThemeButton from './ThemeButton';
 
+
 function App() {
 
   const [token, setToken] = useState('');
-  const {theme} = useContext(ThemeContext)
-
+  //const {theme} = useContext(ThemeContext)
+  const {theme, toggleTheme} = useContext(ThemeContext)
  //const duckState = {isStopped: false};
 
   const defaultOptions = {
@@ -39,7 +40,7 @@ function App() {
     <>
     <div className={`${theme}-theme`}>
         <div className = 'header'>
-        <ThemeButton></ThemeButton>
+        <ThemeButton text="Switch Theme" handleClick= {toggleTheme}></ThemeButton>
         </div>
         { (token === '') ? <Login/> : <WebPlayback token={token} /> }
         

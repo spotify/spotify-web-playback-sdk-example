@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from 'react-lottie';
 import animationData from './lotties/duck';
-//import useToggler from "./useToggler";
+import ThemeButton from './ThemeButton';
 
-//const [play, toggle] = useToggler(false)
 
 const track = {
     name: "",
@@ -92,6 +91,7 @@ function WebPlayback(props) {
         return (
             <>
           <div>
+   
                 <div className="container">
                     <div className="main-wrapper">
 
@@ -101,27 +101,30 @@ function WebPlayback(props) {
                             <div className="now-playing__name">{current_track.name}</div>
                             <div className="now-playing__artist">{current_track.artists[0].name}</div>
 
-                            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
+                        {/*     <button className="btn-player" onClick={() => { player.previousTrack() }} >
                                 &lt;&lt;
-                            </button>
+                            </button> */}
 
-                            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
+                          {/*   <button className="btn-player" onClick={() => { player.togglePlay() }} >
                                 { is_paused ? "PLAY" : "PAUSE" }
-                            </button>
+                            </button> */}
 
-                            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
+                            {/* <button className="btn-player" onClick={() => { player.nextTrack() }} >
                                 &gt;&gt;
-                            </button>
+                            </button> */}
+                            <ThemeButton text="<<" handleClick={() => { player.previousTrack() }}></ThemeButton>
+                            <ThemeButton text={ is_paused ? "PLAY" : "PAUSE" } handleClick={() => { player.togglePlay() }}></ThemeButton>
+                            <ThemeButton text=">>" handleClick={() => { player.nextTrack() }}></ThemeButton>
+
                         </div>
                     </div>
                 </div> 
-
-                            <Lottie 
+               {  <Lottie 
 	    options={defaultOptions}
         height={400}
         width={400}
        isStopped={is_paused} 
-      />    
+      />   }
             </div>
        
             </>

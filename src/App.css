@@ -13,6 +13,7 @@ body {
   color: #eee;
   font-family: Helvetica, Arial;
   font-size: 3vmin;
+  /* background-image: url("./backgrounds/e33.gif"); */
 }
 
 .App {
@@ -47,10 +48,10 @@ body {
 }
 
 .main-wrapper {
-  padding-top: 45px;
+  padding-top: 15px;
   align-items: center;
   display: flex;
-  height: 100%;
+  height: 10%;
   margin: 0 auto;
   justify-content: center;
   position: relative;
@@ -63,19 +64,21 @@ body {
   display: flex;
   justify-content: center;
   height: 100%;
+  outline: 1px solid red;
 }
 
 .main-container {
   flex: 1;
+  outline: 1px solid red;
 }
 
 .now-playing__name {
-  font-size: 1.5em;
+  font-size: 0.5em;
   margin-bottom: 0.2em;
 }
 
 .now-playing__artist {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .now-playing__status {
@@ -87,13 +90,15 @@ body {
   float: left;
   margin-right: 10px;
   text-align: right;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
 }
 
 .now-playing__side {
   margin-left: 2%;
   width: 45%;
+  outline: 1px solid red;
+  
 }
 
 .btn-spotify {
@@ -104,7 +109,7 @@ body {
   cursor:pointer;
   color:#ffffff;
   font-family:Arial;
-  font-size:17px;
+  font-size:10px;
   padding:16px 31px;
   text-decoration:none;
   text-shadow:0px 1px 0px #2f6627;
@@ -113,6 +118,25 @@ body {
   position:relative;
   top:1px;
 }
+
+.btn-player {
+  background-color:red;
+  border-radius:28px;
+  /* border:1px solid #18ab29; */
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:10px;
+  /* padding:16px 31px; */
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+.btn-player:active {
+  position:relative;
+  top:1px;
+}
+
 
 img { background: transparent; }
 
