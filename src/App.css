@@ -115,3 +115,36 @@ body {
 }
 
 img { background: transparent; }
+
+button {
+  padding: 10px;
+  border: none;
+  margin: 10px;
+
+}
+
+.dark-button {
+  background-color: green;
+  color: white;
+}
+
+.light-button {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+
+
+.dark-theme {
+  background-color: #333333;
+  color: whitesmoke;
+}
+
+.light-theme {
+  background-color: whitesmoke;
+  color: #333333;
+}
+
+.header{
+  text-align: right;
+}
