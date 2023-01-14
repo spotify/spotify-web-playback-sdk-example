@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Lottie from 'react-lottie';
 import animationData from './lotties/duck';
 import ThemeButton from './ThemeButton';
+import svg1 from './lotties/dark_duck';
+import {ThemeContext} from "./themeContext"
+
+
 
 
 const track = {
@@ -17,11 +21,20 @@ const track = {
 }
 
 const defaultOptions = {
+    light:{
     loop: true,
     autoplay: false,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
+    }},
+    dark: {
+        loop: true,
+    autoplay: false,
+    animationData: svg1,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
     }
   };
 
@@ -31,6 +44,9 @@ function WebPlayback(props) {
     const [is_active, setActive] = useState(false);
     const [player, setPlayer] = useState(undefined);
     const [current_track, setTrack] = useState(track);
+    
+    const {theme, toggleTheme} = useContext(ThemeContext)
+    const lottieStyle =  theme == "light" ? defaultOptions.light : defaultOptions.dark
 
     useEffect(() => {
 
@@ -120,7 +136,7 @@ function WebPlayback(props) {
                     </div>
                 </div> 
                {  <Lottie 
-	    options={defaultOptions}
+	    options={lottieStyle}
         height={400}
         width={400}
        isStopped={is_paused} 
